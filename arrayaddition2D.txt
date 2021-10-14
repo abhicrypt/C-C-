@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int i,j,c,r,sum=0;
+    char x[15][15];
+    printf("Input rows and columns\n");
+    scanf("%d%d",&r,&c);
+
+    for(i=0;i<r;i++)
+    {
+        printf("\nEnter elements of Row %d\n",i+1);
+        for(j=0;j<c;j++)
+            scanf("%d",&x[i][j]);
+    }
+
+    for(i=1;i<r-1;i++)
+    {
+        for(j=1;j<c-1;j++)
+            sum+=x[i][j];
+    }
+
+    printf("\n%d",sum);
+    return 0;
+}

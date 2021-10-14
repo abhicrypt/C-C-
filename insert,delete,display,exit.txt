@@ -1,0 +1,105 @@
+#include<stdio.h>
+#include<iostream>
+#include<conio.h>
+int main()
+{
+	int a[5],i,F=-1,R=-1;
+	
+	while(1)
+	{
+		system("cls");
+		
+		printf("Select Your Choice \n");
+		printf("================== \n");
+		
+		printf("1. Insert \n");
+		printf("2. Delete \n");
+		printf("3. Display \n");		
+		printf("4. Exit \n\n");
+		
+		printf("Enter Your Choice : ");
+		scanf("%d",&i);
+		printf("\n");
+		
+		switch(i)
+		{
+			case 1:						        
+					if(R<4)
+					{	
+						R++;
+					
+						if(R==0)
+						{
+							F=0;
+						}
+						
+						printf("Enter a Value : ");
+						scanf("%d",&a[R]);
+						printf("Value Inserted into the Queue \n");
+					}
+					else
+					{
+						printf("Queue is Full \n");
+					}
+					break;
+				
+			case 2:	if(R==-1 && F==-1)
+					{
+						printf("Queue is Empty!!! \n");
+					}
+					else
+					{
+						if(F==R)
+						{
+							a[F] = -1;
+							F = -1;
+							R = -1;
+							printf("Value Deleted from the Queue \n");
+						}
+						else
+						{
+							for(i=F+1; i<=R; i++)
+							{
+if(i==R)
+								{
+									a[i-1] = a[i];
+									a[i] = -1;	//a[R] = -1;
+									R--;
+								}
+								else
+								{									
+									a[i-1] = a[i];
+								}
+							}
+							printf("Value Deleted from the Queue \n");
+						}
+					}
+					break;
+				
+			case 3:	if(R==-1 && F==-1)
+					{
+						printf("Queue is Empty!!! \n");
+					}
+					else
+					{
+						printf("\n");
+						printf("Queue Values are \n");
+						printf("================ \n");
+						for(i=F; i<=R; i++)
+						{
+							printf("%d  ",a[i]);						
+						}
+						printf("\n\n");
+					}
+					break;
+			case 4:	printf("Program Terminated!!! \n");
+					getch();
+					return 0;
+			
+			default:printf("Invalid Choice!!! \n");
+					break;
+		}
+		getch();			
+	}		
+	return 0;
+}

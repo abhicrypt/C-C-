@@ -1,0 +1,41 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+int i,j,len1,len2;
+        char x[100],y[100];
+        gets(x);
+        gets(y);
+        len1=strlen(x);
+        len2=strlen(y);
+        if(len1==len2)
+        {
+                for(i=0;i<len1;i++)
+                {
+                        printf("%c%c\n",x[i],y[i]);
+                }
+        }
+        else if(len1>len2)
+        {
+                for(i=0;i<len2;i++)
+                {
+                        printf("%c%c\n",x[i],y[i]);
+                }
+                for(i=len2;i<len1;i++)
+                {
+                        printf("%c*\n",x[i]);
+                }
+        }
+        else
+        {
+                for(i=0;i<len1;i++)
+                {
+                        printf("%c%c\n",x[i],y[i]);
+                }
+                for(i=len1;i<len2;i++)
+                {
+                        printf("*%c\n",y[i]);
+                }
+        }
+return 0;
+}

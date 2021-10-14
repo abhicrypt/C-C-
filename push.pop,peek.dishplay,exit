@@ -1,0 +1,79 @@
+#include<stdio.h>
+#include<conio.h>
+#include<iostream>
+int main()
+{
+	int a[5]={0,0,0,0,0},top=-1,x,i;
+	while(1)
+	{
+		system("cls");
+		printf("\n-----------------");
+		printf("\n------STACK------");
+		printf("\n-----------------");
+		printf("\n1. PUSH");
+		printf("\n2. POP");
+		printf("\n3. PEEK");
+		printf("\n4. DISPLAY");
+		printf("\n5. EXIT");
+		printf("\nEnter your choice: ");
+		scanf("%d",&x);
+		switch(x)
+		{
+			case 1: if(top<4)
+					{
+						top++;
+						printf("\nEnter the value: ");
+						scanf("%d",&a[top]);
+						printf("\nValue stored");
+						getch();
+					}
+					else
+					{
+						printf("\n Stack is full (Stack Overflow)");
+						getch();
+					}
+					break;
+			case 2: if(top!=-1)
+					{
+						a[top]=0;
+						top--;
+						printf("\nValue removed from the stack");
+						getch();
+					}
+					else
+					{
+						printf("\n Stack is empty (Stack Underflow)");
+						getch();
+					}
+break;
+			case 3: if(top!=-1)
+					{
+						printf("\nTop value is: a[%d] = %d",top,a[top]);
+						getch();
+					}
+					else
+					{
+						printf("\n Stack is empty (Stack Underflow)");
+						getch();
+					}
+					break;
+			case 4: if(top!=-1)
+					{
+						printf("\n\nStack value is:");
+						printf("\n----------------------");
+						printf("\n%d | %d | %d | %d | %d",a[0],a[1],a[2],a[3],a[4]);
+						printf("\n----------------------");
+						getch();
+					}
+					else
+					{
+						printf("\n\nThe Stack is empty");
+						getch();
+					}
+					break;
+			case 5: printf("\nProgram is terminating");
+					return 0;
+					break;
+		}
+	}
+}

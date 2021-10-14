@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+    int i,c=0,v=0,w=0;
+    char x[100];
+    printf("Input data\n");
+    gets(x);
+
+    for(i=0;x[i]!='\0';i++)
+    {
+        if(x[i]=='a'||x[i]=='e'||x[i]=='i'||x[i]=='o'||x[i]=='u')
+            v++;
+        else if(x[i]==' ')
+            w++;
+        else
+            c++;
+    }
+
+   printf("\nV:%d C:%d W:%d",v,c,w);
+    return 0;
+}

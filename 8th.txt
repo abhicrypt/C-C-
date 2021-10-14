@@ -1,0 +1,46 @@
+#include<stdio.h>
+int main()
+{
+
+        int r,c=0,a[10],i;
+        long x;
+        scanf("%ld",&x);
+        while(x!=0)
+        {
+                r=x%10;
+                a[c]=r;
+                c=c+1;
+                x=x/10;
+        }
+        for(i=c-1;i>=0;i--)
+        {
+            if(i==0)
+            {
+                    if(a[i+1]%2==0)
+                    {
+                    	printf("%d ",a[i]);
+    	      }
+
+            }
+            else if(i==c-1)
+            {
+            	if(a[i-1]%2==0)
+                    {
+                    	printf("%d ",a[i]);
+	      }
+             }
+                else
+                {
+                        if((a[i-1]%2)==0 && (a[i+1]%2)==0)
+                        {
+                                printf("%d ",a[i]);
+                        }
+                        else
+                        {
+                                printf("");
+                        }
+                                
+                }
+        }
+return 0;
+}
